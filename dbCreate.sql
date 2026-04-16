@@ -2,7 +2,7 @@
 
 -- DROP DATABASE IF EXISTS "TBD";
 
-CREATE DATABASE "TBD"
+CREATE DATABASE "Peluqueria"
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'
