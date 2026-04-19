@@ -1,3 +1,12 @@
+-- Elimina la base de datos si es que existe
+DROP DATABASE IF EXISTS control_peluqueria;
+
+-- Crea la base de datos 
+CREATE DATABASE control_peluqueria;
+
+-- Despues selecciona la base de datos 
+USE control_peluqueria;
+
 -- Creamos las tablas
 -- Comuna: id_comuna(PK), Nombre_comuna
 CREATE TABLE Comuna (
