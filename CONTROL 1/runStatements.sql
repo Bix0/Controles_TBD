@@ -129,7 +129,7 @@ JOIN Detalle_Cita ON Citas.Id_Cita = Detalle_Cita.Id_Cita
 JOIN Servicio ON Detalle_Cita.Id_Servicio = Servicio.Id_Servicio
 WHERE Servicio.Nombre = 'Tinte';
 
--- Consulta 6- Identificar el horario mas concurrido por peluqueria durante el 2018 y 2019, desagregados por mes
+-- Consulta 6- Identificar el horario mas concurrido por peluqueria durante el 2018 y 2029, desagregados por mes
 
 WITH Concurrencia AS (
     SELECT 
