@@ -1,0 +1,34 @@
+1. Primera Forma Normal (1FN): Valores Atómicos
+Regla: Eliminar grupos repetidos y asegurar que cada campo contenga un solo valor indivisible (atómico).
+
+Problema en Cliente y Empleado: El campo Nombre_Cliente y Nombre (Empleado) probablemente contengan el nombre completo (ej. "Juan Pérez Gómez"). Esto dificulta búsquedas y ordenamientos.
+
+Solución: Dividir en Nombres, Apellido_Paterno y Apellido_Materno.
+
+Problema en Horario:  hora_inicio y hora_fin como DateTime, y además dia_semana como Date. Esto es redundante y confuso.
+
+Solución: hora_inicio y hora_fin deben ser tipo TIME, y dia_semana un identificador (ej. INT del 1 al 7 o una tabla de días).
+
+2. Segunda Forma Normal (2FN): Dependencia Funcional Completa
+Regla: Debe cumplir la 1FN y todos los atributos no clave deben depender de la totalidad de la clave primaria (aplica a tablas con claves compuestas).
+
+Análisis de Clientes_peluqueria: Su PK es compuesta (Id_Cliente, ID_Peluqueria). Como no tiene atributos adicionales, cumple la 2FN perfectamente.
+
+Problema semántico en Detalle_Cita: Aunque técnicamente tiene una PK simple (IdDetalle), mezcla dos conceptos distintos: Productos y Servicios. Si un cliente solo se corta el pelo (Servicio), el campo IdProducto quedará nulo. Si compra un shampoo (Producto), IdServicio quedará nulo.
+
+Solución: Separar en dos tablas: Detalle_Cita_Servicio y Detalle_Cita_Producto. se mantendra una sola tabla, pero configuraremos ambos ID para que acepten nulos (NULL), de modo que el motor de BD no arroje errores.
+
+3. Tercera Forma Normal (3FN): Sin Dependencias Transitivas
+Regla: Debe cumplir la 2FN y los atributos no clave no deben depender de otros atributos no clave (evitar datos derivados o redundantes).
+
+Problema en Cliente y Peluqueria: Ambas tablas tienen el campo Comuna como VARCHAR. Si alguien escribe "Santiago", otro "Stgo" y otro "Santiagoo", tendrás datos sucios.
+
+Solución: Crear una tabla Comuna (Id_Comuna, Nombre_Comuna) y referenciarla en Cliente y Peluquería.
+
+Problema en Empleado, Producto y Servicio: Tienes Rol, Tipo_producto y Tipo_servicio como texto. Por la misma razón que las comunas, esto genera inconsistencias.
+
+Solución: Crear tablas catálogo para Roles, Categorias_Productos y Categorias_Servicios.
+
+Problema en Pago: El campo Total. En teoría relacional estricta, el total es calculable sumando el (Precio_Pagado * Cantidad) de la tabla Detalle_Cita. Almacenarlo viola la 3FN.
+
+Excepción:Lo mantendremos en el script, pero con conocimiento de causa, ya que puede causar problemas de rendimiento al guardarlo, ya que se puede calcul transitivamente.
