@@ -1,0 +1,39 @@
+Antes de empezar: 
+	Existe un problema en los atributos del Horario; hora_inicio y hora_fin como DateTime, 
+	y además dia_semana como Date. deberian cambiarse los de hora a TIME ya que solo dicen una hora, 
+	no fecha como tal, y dia semana seria mas conveniente con un identificador
+
+
+Primera Forma Normal (1FN): Valores Atómicos
+Se deben Eliminar grupos repetidos y asegurar que cada campo contenga un solo valor atomico, que no sea compuesto mejor
+
+Cliente y Empleado: El campo Nombre_Cliente y Nombre, 
+				como son atributos compuestos de varias palabras, deberia separarse para una busqueda mas simple
+
+Solucion: Dividir en Nombres, Apellido_Paterno y Apellido_Materno.
+
+
+Segunda Forma Normal (2FN): Dependencia Funcional Completa
+Debe cumplir la 1FN y todos los atributos no clave deben depender de la totalidad de la clave primaria
+
+Se cumple la 2FN, ya que se observo que los atributos cumplen con la dependencia de la PK
+
+Tercera Forma Normal (3FN): Sin Dependencias Transitivas
+Debe cumplir la 2FN y los atributos no clave no deben depender de otros atributos no clave, o sea, no debe existir transitividad entre la misma tabla
+
+Cliente y Peluqueria: Ambas tablas tienen el campo Comuna como VARCHAR. 
+				  Si alguien escribe "Santiago", otro "Stgo" y otro "Santiagoo", tendrás datos sucios.
+
+Solución: Crear una tabla Comuna (Id_Comuna, Nombre_Comuna) y referenciarla en Cliente y Peluquería.
+
+Empleado, Producto y Servicio: Se tiene Rol, Tipo_producto y Tipo_servicio como VARCHAR.
+					   Por la misma razón que las comunas, esto genera inconsistencias.
+
+Solución: Crear tablas catálogo para Roles, Categorias_Productos y Categorias_Servicios.
+
+Pago: El campo Total, el total es calculable sumando el (Precio_Pagado * Cantidad) de la tabla Detalle_Cita.
+
+Solucion: Se mantendra en el script, pero se sabe que puede causar problemas de rendimiento al guardarlo, ya que se puede calcular transitivamente.
+
+O sea como tal, el MER propuesto coumplia casi al 100% la Normalizacion, pero algunas cosas que faltaron o no se vieron al momento de modificarlo se pudieron
+observar en este proceso de normalizacion, quedando un modelo mas "estilizado" y que se deberia implementar mas facilmente para resolver las consultas.
