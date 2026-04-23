@@ -1,121 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+
+import { useState } from 'react';
+import RaidFilterBar from './components/RaidFilterBar';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [Rolfiltro, setRolfiltro] = useState('Todos');
+  const [Ilvfiltro, setIlvfiltro] = useState(0);
+
+  const [raids, setRaids] = useState([
+    { id:1, nombre: 'Cripta de las sombra', reqIlv: 150, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:2, nombre: 'Asalto a Ulduar', reqIlv: 180, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:3, nombre: 'Ciudadela del Fuego Infernal', reqIlv: 200, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:4, nombre: 'Templo Oscuro', reqIlv: 170, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:5, nombre: 'Corona de Hielo', reqIlv: 190, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:6, nombre: 'Bastión del Crepúsculo', reqIlv: 160, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:7, nombre: 'Guarida de Alanegra', reqIlv: 155, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:8, nombre: 'Cámaras de Reflexión', reqIlv: 165, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:9, nombre: 'Bastión Violeta', reqIlv: 175, cupos: {tanque: 1, healer: 2, dps: 5} },
+    { id:10, nombre: 'Sagrario de la Tempestad', reqIlv: 185, cupos: {tanque: 1, healer: 2, dps: 5} }
+  ]);
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div style={{ fontFamily: 'arial', maxWidth: '800px', margin: '0 auto' }}>
+      <RaidFilterBar 
+        rolFiltro={Rolfiltro} 
+        setRolFiltro={setRolfiltro} 
+        ilvlFiltro={Ilvfiltro} 
+        setIlvlFiltro={setIlvfiltro} 
+      /> 
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* El mapeo y renderizado de las Raids irá aquí en el paso 3 */}
+      <div>
+        <p> Raids cargadas en memoria: {raids.length} </p>
+        <p> Filtro actual: Rol {Rolfiltro} | Item Level: {Ilvfiltro} </p>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
