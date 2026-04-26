@@ -1,4 +1,5 @@
 # Local docker-compose configurations
+docker-compose.yml
 docker-compose.override.yml
 docker-compose.override.override.yml
 
