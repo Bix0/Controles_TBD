@@ -1,23 +1,39 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import RaidFilterBar from './components/RaidFilterBar';
 
 function App() {
   const [Rolfiltro, setRolfiltro] = useState('Todos');
   const [Ilvfiltro, setIlvfiltro] = useState(0);
+  const [raids, setRaids] = useState([]); // Ahora inicia vacío
 
-  const [raids, setRaids] = useState([
-    { id:1, nombre: 'Cripta de las sombra', reqIlv: 150, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:2, nombre: 'Asalto a Ulduar', reqIlv: 180, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:3, nombre: 'Ciudadela del Fuego Infernal', reqIlv: 200, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:4, nombre: 'Templo Oscuro', reqIlv: 170, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:5, nombre: 'Corona de Hielo', reqIlv: 190, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:6, nombre: 'Bastión del Crepúsculo', reqIlv: 160, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:7, nombre: 'Guarida de Alanegra', reqIlv: 155, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:8, nombre: 'Cámaras de Reflexión', reqIlv: 165, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:9, nombre: 'Bastión Violeta', reqIlv: 175, cupos: {tanque: 1, healer: 2, dps: 5} },
-    { id:10, nombre: 'Sagrario de la Tempestad', reqIlv: 185, cupos: {tanque: 1, healer: 2, dps: 5} }
-  ]);
+  // 1. CARGAR DATOS DESDE SPRING BOOT AL INICIAR
+  useEffect(() => {
+    // Asumiendo que tu Spring Boot corre en el puerto 8080
+    axios.get('http://localhost:8080/api/raids')
+      .then(response => {
+        setRaids(response.data); // Guardamos el JSON real de la BD
+      })
+      .catch(error => {
+        console.error("Error conectando al backend:", error);
+      });
+  }, []); // Los corchetes vacíos indican que solo se ejecuta una vez al cargar la página
+
+  // 2. FUNCIÓN PARA ENVIAR LA SOLICITUD AL BACKEND
+  const manejarInscripcion = (idRaid) => {
+    // Nota: Por ahora "quemamos" el ID del personaje 1. 
+    // Más adelante, este ID lo sacaremos del JWT del usuario logueado.
+    const idPersonajeTemporal = 1; 
+
+    axios.post(`http://localhost:8080/api/raids/${idRaid}/inscribir?idPersonaje=${idPersonajeTemporal}`)
+      .then(response => {
+        alert("¡Inscripción exitosa! Estás en la Raid.");
+      })
+      .catch(error => {
+        // Si el Trigger de PostgreSQL bloquea la acción, Spring Boot devolverá un BadRequest (400)
+        alert("Error: " + (error.response?.data || "No tienes el Item Level requerido o la raid no existe."));
+      });
+  };
 
   return (
     <div style={{ fontFamily: 'arial', maxWidth: '800px', margin: '0 auto' }}>
@@ -28,10 +44,61 @@ function App() {
         setIlvlFiltro={setIlvfiltro} 
       /> 
 
-      {/* El mapeo y renderizado de las Raids irá aquí en el paso 3 */}
       <div>
-        <p> Raids cargadas en memoria: {raids.length} </p>
-        <p> Filtro actual: Rol {Rolfiltro} | Item Level: {Ilvfiltro} </p>
+        <p> Raids cargadas desde PostgreSQL: {raids.length} </p>
+        <p> Filtro actual {'->'} Rol: {Rolfiltro} | Item Level: {Ilvfiltro} </p>
+      </div>
+
+      {/* Grilla de Raids (Adaptada a los nombres de tu Raid.java) */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginTop: '30px' }}>
+        
+        {raids
+          .filter(raid => {
+            // Filtrar por Item Level
+            const cumpleNivel = Ilvfiltro >= raid.item_level_requerido;
+            
+            // Filtrar por Rol
+            const rolBuscado = Rolfiltro.toLowerCase();
+            let cumpleRol = true;
+            if (rolBuscado === 'tanque') cumpleRol = raid.cupos_tanque > 0;
+            else if (rolBuscado === 'healer') cumpleRol = raid.cupos_healer > 0;
+            else if (rolBuscado === 'dps') cumpleRol = raid.cupos_dps > 0;
+
+            return cumpleNivel && cumpleRol;
+          })
+          .map(raid => (
+            <div key={raid.id_raid} style={{ border: '1px solid #444', padding: '20px', borderRadius: '8px', backgroundColor: '#1a1a1a', color: 'white' }}>
+              <h3 style={{ margin: '0 0 5px 0', color: '#61dafb' }}>{raid.nombre}</h3>
+              <p style={{ margin: '0 0 15px 0', fontSize: '12px', color: '#888' }}>
+                Estado: {raid.estado}
+              </p>
+              
+              <p style={{ margin: '0 0 15px 0', fontSize: '14px', color: '#aaa' }}>
+                iLvl Requerido: <strong>{raid.item_level_requerido}</strong>
+              </p>
+              
+              <div style={{ backgroundColor: '#242424', padding: '10px', borderRadius: '5px' }}>
+                <p style={{ margin: '5px 0', color: raid.cupos_tanque > 0 ? '#4caf50' : '#f44336' }}>
+                  🛡️ Tanques: {raid.cupos_tanque}
+                </p>
+                <p style={{ margin: '5px 0', color: raid.cupos_healer > 0 ? '#4caf50' : '#f44336' }}>
+                  ➕ Healers: {raid.cupos_healer}
+                </p>
+                <p style={{ margin: '5px 0', color: raid.cupos_dps > 0 ? '#4caf50' : '#f44336' }}>
+                  ⚔️ DPS: {raid.cupos_dps}
+                </p>
+              </div>
+
+              <button 
+                style={{ width: '100%', marginTop: '15px', padding: '10px', cursor: 'pointer', backgroundColor: '#61dafb', color: '#000', border: 'none', borderRadius: '4px', fontWeight: 'bold' }}
+                onClick={() => manejarInscripcion(raid.id_raid)}
+              >
+                Solicitar Ingreso
+              </button>
+            </div>
+          ))
+        }
+
       </div>
     </div>
   );

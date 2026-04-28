@@ -1,32 +1,32 @@
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\ClanController.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\InventarioController.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\ItemController.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\JugadorController.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\PersonajeController.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\RaidController.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\RankingController.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\MmorpgApplication.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\AuditoriaLiderazgo.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Clan.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\HistorialLoot.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\InscripcionRaid.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Inventario.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Item.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\ItemClasePermitida.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Jugador.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Personaje.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Raid.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\ClanRepository.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\InventarioRepository.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\ItemRepository.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\JugadorRepository.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\PersonajeRepository.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\PlayerRepository.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\RaidRepository.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\ClanService.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\InventarioService.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\ItemService.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\JugadorService.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\PersonajeService.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\RaidService.java
-F:\universidad\fingeso\entrega 3\demo-maven\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\RankingService.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\ClanController.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\InventarioController.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\ItemController.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\JugadorController.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\PersonajeController.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\RaidController.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\controllers\RankingController.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\MmorpgApplication.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\AuditoriaLiderazgo.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Clan.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\HistorialLoot.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\InscripcionRaid.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Inventario.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Item.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\ItemClasePermitida.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Jugador.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Personaje.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\models\Raid.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\ClanRepository.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\InventarioRepository.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\ItemRepository.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\JugadorRepository.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\PersonajeRepository.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\PlayerRepository.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\repositories\RaidRepository.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\ClanService.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\InventarioService.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\ItemService.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\JugadorService.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\PersonajeService.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\RaidService.java
+C:\Users\Bruno\Desktop\CLASES_USACH\TBD\Control_1\Controles_TBD\Lab1\backend\mmorpg\src\main\java\com\grupo3\mmorpg\services\RankingService.java
