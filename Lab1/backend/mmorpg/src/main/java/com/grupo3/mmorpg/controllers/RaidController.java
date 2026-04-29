@@ -13,6 +13,7 @@ import java.util.List;
  * Controller REST para operaciones con Raids
  * Endpoints: /api/raids
  */
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/raids")
 public class RaidController {
