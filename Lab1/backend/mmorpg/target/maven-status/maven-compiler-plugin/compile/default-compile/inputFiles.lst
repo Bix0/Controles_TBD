@@ -1,4 +1,5 @@
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/MmorpgApplication.java
+/home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/controllers/AuthController.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/controllers/ClanController.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/controllers/InventarioController.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/controllers/ItemController.java
@@ -24,9 +25,13 @@
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/repositories/PlayerRepository.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/repositories/RaidRepository.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/ClanService.java
+/home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/DataSeeder.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/InventarioService.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/ItemService.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/JugadorService.java
+/home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/JwtAuthFilter.java
+/home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/JwtUtil.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/PersonajeService.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/RaidService.java
 /home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/RankingService.java
+/home/emiliop/Documentos/GitHub/Controles_TBD/Lab1/backend/mmorpg/src/main/java/com/grupo3/mmorpg/services/SecurityConfig.java
